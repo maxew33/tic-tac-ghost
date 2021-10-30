@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  background: bottom/cover no-repeat url(https://assets.codepen.io/t-1/shapelined-Z1xxfm52Htc-unsplash.jpg);
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+}
+
+.title {
+  position: fixed;
+  top: 2vmin;
+  height: 8vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Sansita Swashed", cursive;
+  font-size: 8vmin;
+  font-weight: bolder;
+  color: white;
+  filter: blur(0.1vmin);
+  text-shadow: 1px 1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray, -1px -1px 0 gray, 1px 0px 0 gray, 0px 1px 0 gray, -1px 0px 0 gray, 0px -1px 0 gray;
+}
+
+.buttons {
+  width: 50vmin;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.75;
+}
+.buttons button {
+  height: 10vmin;
+  width: 20vmin;
+  font-family: "Sansita Swashed", cursive;
+  font-size: 2.5vmin;
+  font-weight: bolder;
+  border-radius: 2vmin;
+  color: #666666;
+  border: none;
+  cursor: pointer;
+  background: white;
+  box-shadow: 1vmin 1vmin 5vmin white, -1vmin 1vmin 5vmin white, 1vmin -1vmin 5vmin white, -1vmin -1vmin 5vmin white, 1vmin 0vmin 5vmin white, -1vmin 0vmin 5vmin white, 0vmin 1vmin 5vmin white, 0vmin -1vmin 5vmin white, 1vmin 1vmin 10vmin white, -1vmin 1vmin 10vmin white, 1vmin -1vmin 10vmin white, -1vmin -1vmin 10vmin white, 1vmin 0vmin 10vmin white, -1vmin 0vmin 10vmin white, 0vmin 1vmin 10vmin white, 0vmin -1vmin 10vmin white;
+}
+.buttons button:hover {
+  transform: scale(1.1);
+}
+.buttons .summon-btn,
+.buttons .cancel {
+  transition: opacity 0.25s ease-in, transform 0.25s ease-in-out;
+}
+.buttons .vanish {
+  -webkit-animation: 0.5s ease-in forwards disappear;
+  animation: 0.5s ease-in forwards disappear;
+}
+@-webkit-keyframes disappear {
+  90% {
+    filter: blur(5px);
+    transform: translate(2vmin, -50vmin) scale(4) rotate(180deg);
+  }
+  100% {
+    filter: blur(50px);
+    opacity: 0;
+    cursor: unset;
+  }
+}
+@keyframes disappear {
+  90% {
+    filter: blur(5px);
+    transform: translate(2vmin, -50vmin) scale(4) rotate(180deg);
+  }
+  100% {
+    filter: blur(50px);
+    opacity: 0;
+    cursor: unset;
+  }
+}
+
+.cards-container {
+  position: absolute;
+  height: 80vmin;
+  width: 80vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.cards-container .card {
+  height: 33.3%;
+  width: 33.3%;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  font-size: 15vmin;
+  color: white;
+  filter: blur(0.25vmin);
+  opacity: 0.75;
+  transition: transform 0.25s linear, color 0.25s linear;
+}
+.cards-container .selected {
+  cursor: not-allowed;
+}
+.cards-container .card:not(.selected):hover {
+  transform: scale(1.1);
+}
+
+.restart {
+  position: fixed;
+  height: 5vmin;
+  width: 10vmin;
+  line-height: 5vmin;
+  text-align: center;
+  bottom: 5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.25s linear;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5vmin;
+  color: white;
+  filter: blur(0.1vmin);
+  text-shadow: 1px 1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray, -1px -1px 0 gray, 1px 0px 0 gray, 0px 1px 0 gray, -1px 0px 0 gray, 0px -1px 0 gray;
+  cursor: pointer;
+  display: none;
+}
+.restart:hover {
+  transform: translateX(-50%) scale(1.1);
+}/*# sourceMappingURL=style.css.map */
